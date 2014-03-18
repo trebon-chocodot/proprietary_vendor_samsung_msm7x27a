@@ -12,12 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#   Samsung proprietary binaries and libraries for MSM7x27A
+#
 
-## Prebuilt libraries that are needed to build open-source libraries
-PRODUCT_COPY_FILES += \
-    vendor/samsung/msm7x27a-common/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so
-
-## RIL (Radio Interface Relay)
+## RIL (radio interface relay)
 PRODUCT_COPY_FILES += \
     vendor/samsung/msm7x27a-common/proprietary/bin/rild:system/bin/rild \
     vendor/samsung/msm7x27a-common/proprietary/lib/libril.so:system/lib/libril.so \
@@ -26,7 +24,16 @@ PRODUCT_COPY_FILES += \
 
 ## Camera
 PRODUCT_COPY_FILES += \
-    vendor/samsung/msm7x27a-common/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so
+    vendor/samsung/msm7x27a-common/proprietary/lib/libcamera.so:system/lib/libcamera.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libActionShot.so:system/lib/libActionShot.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libarccamera.so:system/lib/libarccamera.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libCaMotion.so:system/lib/libCaMotion.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libcaps.so:system/lib/libcaps.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libPanoraMax1.so:system/lib/libPanoraMax1.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libPlusMe.so:system/lib/libPlusMe.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libseccamera.so:system/lib/libseccamera.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libseccameraadaptor.so:system/lib/libseccameraadaptor.so
 
 ## FM
 PRODUCT_COPY_FILES += \
@@ -37,8 +44,14 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/msm7x27a-common/proprietary/lib/libidl.so:system/lib/libidl.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libdsutils.so:system/lib/libdsutils.so
 
+## Cameradata
+PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/cameradata/datapattern_420sp.yuv:system/cameradata/datapattern_420sp.yuv \
+    vendor/samsung/msm7x27a-common/proprietary/cameradata/datapattern_front_420sp.yuv:system/cameradata/datapattern_front_420sp.yuv
+
 ## Media
 PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
@@ -53,6 +66,7 @@ PRODUCT_COPY_FILES += \
 
 ## Adreno 200 GPU
 PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
@@ -67,9 +81,16 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/msm7x27a-common/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
     vendor/samsung/msm7x27a-common/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
+## GPU Blobs
+PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libgsl.so:system/lib/libgsl.so \
+    vendor/samsung/msm7x27a-common/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so
+
 ## Binaries
 PRODUCT_COPY_FILES += \
     vendor/samsung/msm7x27a-common/proprietary/bin/rmt_storage:system/bin/rmt_storage \
+    vendor/samsung/msm7x27a-common/proprietary/bin/abtfilt:system/bin/abtfilt \
     vendor/samsung/msm7x27a-common/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init
 
 ## Other libs
@@ -109,3 +130,36 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/msm7x27a-common/proprietary/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
     vendor/samsung/msm7x27a-common/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so
+
+## LPM (media)
+PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/Disconnected.qmg:system/media/Disconnected.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_error.qmg:system/media/battery_error.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_5.qmg:system/media/battery_charging_5.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_10.qmg:system/media/battery_charging_10.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_15.qmg:system/media/battery_charging_15.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_20.qmg:system/media/battery_charging_20.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_25.qmg:system/media/battery_charging_25.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_30.qmg:system/media/battery_charging_30.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_35.qmg:system/media/battery_charging_35.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_40.qmg:system/media/battery_charging_40.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_45.qmg:system/media/battery_charging_45.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_50.qmg:system/media/battery_charging_50.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_55.qmg:system/media/battery_charging_55.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_60.qmg:system/media/battery_charging_60.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_65.qmg:system/media/battery_charging_65.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_70.qmg:system/media/battery_charging_70.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_75.qmg:system/media/battery_charging_75.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_80.qmg:system/media/battery_charging_80.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_85.qmg:system/media/battery_charging_85.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_90.qmg:system/media/battery_charging_90.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_95.qmg:system/media/battery_charging_95.qmg \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/media/battery_charging_100.qmg:system/media/battery_charging_100.qmg
+
+## LPM (binaries and libraries)
+PRODUCT_COPY_FILES += \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/bin/playlpm:system/bin/playlpm \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/bin/charging_mode:system/bin/charging_mode \
+    vendor/samsung/msm7x27a-common/proprietary/lpm/lib/libQmageDecoder.so:system/lib/libQmageDecoder.so
